@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altesse IA - Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Altess Tech Service Logo" class="logo-small">
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container chat-container">
+            <a href="dashboard.html" class="back-button">← Retour au tableau de bord</a>
+            <h1>Chat avec Altesse IA</h1>
+            
+            <div id="chat-box" class="chat-box">
+                </div>
+
+            <form id="chat-form" class="chat-form">
+                <input type="text" id="user-input" placeholder="Écrivez votre message..." required>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Altess Tech Service. Tous droits réservés.</p>
+    </footer>
+
+    <script src="chat.js"></script>
+
+</body>
+</html>
