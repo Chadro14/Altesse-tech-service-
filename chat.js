@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('user-input');
     const chatBox = document.getElementById('chat-box');
 
+    // Message d'accueil initial de l'IA
+    appendMessage("Je suis Altesse IA, votre assistant. J'ai été créé par Son Altesse, un développeur congolais 🇨🇩.", 'bot');
+
     chatForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const userMessage = userInput.value.trim();
@@ -29,31 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function simulateApiResponse(message) {
         // En vrai, vous feriez une requête à une API ici.
-        // Exemple avec une API (non fonctionnel sans clé API) :
-        // fetch('https://api.openai.com/v1/chat/completions', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //     'Authorization': 'Bearer VOTRE_CLE_API'
-        //   },
-        //   body: JSON.stringify({
-        //     model: "gpt-3.5-turbo",
-        //     messages: [{ role: "user", content: message }]
-        //   })
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //   const botMessage = data.choices[0].message.content;
-        //   appendMessage(botMessage, 'bot');
-        // });
-
         // Pour l'instant, nous allons utiliser une réponse simple.
-        let botResponse = "Désolé, je suis encore en phase de développement. Comment puis-je vous aider ?";
+        let botResponse = "Votre requête a été entendue. Je suis à votre service.";
         
         if (message.toLowerCase().includes("bonjour")) {
-            botResponse = "Bonjour ! Comment puis-je vous assister aujourd'hui ?";
+            botResponse = "Salutations. Comment puis-je vous assister aujourd'hui, vous qui faites partie de mon royaume ?";
         } else if (message.toLowerCase().includes("services")) {
-            botResponse = "Nous offrons des services de développement web, de personnalisation d'IA, et de cybersécurité.";
+            botResponse = "Nous offrons des services de développement web, de personnalisation d'IA, et de cybersécurité. N'hésitez pas à demander ce que vous désirez.";
+        } else if (message.toLowerCase().includes("qui es-tu")) {
+            botResponse = "Je suis Altesse IA, votre humble serviteur. J'ai été créé par Son Altesse, un développeur congolais 🇨🇩. Ma seule mission est de vous servir avec efficacité.";
+        } else {
+            botResponse = "Votre requête a été entendue. Je suis à votre service.";
         }
 
         setTimeout(() => {
