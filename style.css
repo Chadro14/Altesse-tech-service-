@@ -259,3 +259,68 @@ footer {
         display: block; /* Affiche le menu mobile quand il est actif */
     }
 }
+
+/* Styles pour le menu mobile (hamburger) */
+.menu-toggle {
+    display: none; /* Masqué par défaut sur desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajuster en fonction de la hauteur de l'en-tête */
+    right: 0;
+    width: 250px;
+    background-color: #0E4477;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu li a:hover {
+    background-color: #104C7D;
+}
+
+/* Afficher le menu sur les petits écrans */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Cache la navigation principale */
+    }
+    .menu-toggle {
+        display: flex; /* Affiche l'icône du menu */
+    }
+    .main-header {
+        justify-content: space-between;
+    }
+    .mobile-menu.active {
+        display: block; /* Affiche le menu mobile quand il est actif */
+    }
+}
