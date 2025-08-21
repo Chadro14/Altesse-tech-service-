@@ -38,39 +38,48 @@
             <p class="tagline">Bienvenue sur votre espace de gestion.</p>
 
             <div class="dashboard-buttons">
-                <a href="#" class="cta-button">Démade</a>
-                <a href="#" class="cta-button">Altesse IA</a>
-                <a href="#" class="cta-button">Cybersécurité</a>
+                <a href="#" class="cta-button" data-section="altesse-ia">Altesse IA</a>
+                <a href="#" class="cta-button" data-section="cybersecurite">Cybersécurité</a>
+                <a href="#" class="cta-button" data-section="contact-admin">Écrire à l'admin</a>
+                <a href="#" class="cta-button" data-section="publications">Publications de l'admin</a>
+                <a href="#" class="cta-button" data-section="evaluation">Évaluation</a>
             </div>
 
-            <div class="dashboard-sections">
-                <div class="section-card">
-                    <h2>Boîte pour écrire à l'admin</h2>
-                    <form class="contact-form">
-                        <textarea placeholder="Votre message..."></textarea>
-                        <button type="submit" class="cta-button">Envoyer</button>
-                    </form>
-                </div>
-                
-                <div class="section-card">
-                    <h2>Publications de l'admin</h2>
-                    <div class="publications-list">
-                        <p>Publication #1: Mise à jour du site...</p>
-                        <p>Publication #2: Nouveaux services...</p>
-                    </div>
-                </div>
-
-                <div class="section-card">
-                    <h2>Évaluation</h2>
-                    <p>Laissez-nous un commentaire.</p>
-                    <form class="evaluation-form">
-                        <input type="text" placeholder="Votre nom">
-                        <textarea placeholder="Votre avis..."></textarea>
-                        <button type="submit" class="cta-button">Soumettre</button>
-                    </form>
-                </div>
+            <div id="altesse-ia-section" class="hidden-section">
+                <h2>Altesse IA</h2>
+                <p>Découvrez notre intelligence artificielle, prête à vous assister dans vos tâches.</p>
             </div>
             
+            <div id="cybersecurite-section" class="hidden-section">
+                <h2>Cybersécurité</h2>
+                <p>Nos services de sécurité pour protéger vos projets et vos données.</p>
+            </div>
+
+            <div id="contact-admin-section" class="hidden-section">
+                <h2>Écrire à l'admin</h2>
+                <form class="contact-form">
+                    <textarea placeholder="Votre message..." required></textarea>
+                    <button type="submit" class="cta-button">Envoyer</button>
+                </form>
+            </div>
+            
+            <div id="publications-section" class="hidden-section">
+                <h2>Publications de l'admin</h2>
+                <div class="publications-list">
+                    <p>Publication #1: Mise à jour du site...</p>
+                    <p>Publication #2: Nouveaux services...</p>
+                </div>
+            </div>
+
+            <div id="evaluation-section" class="hidden-section">
+                <h2>Évaluation</h2>
+                <p>Laissez-nous un commentaire.</p>
+                <form class="evaluation-form">
+                    <input type="text" placeholder="Votre nom" required>
+                    <textarea placeholder="Votre avis..." required></textarea>
+                    <button type="submit" class="cta-button">Soumettre</button>
+                </form>
+            </div>
         </div>
     </main>
 
