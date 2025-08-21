@@ -15,9 +15,20 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li class="desktop-only"><a href="dashboard.html">Tableau de bord</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="main-content">
@@ -30,8 +41,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Altess Tech Service. by Altesse 🛅.</p>
+        <p>&copy; 2025 Altess Tech Service. Tous droits réservés.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
