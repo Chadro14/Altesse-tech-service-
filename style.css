@@ -1,8 +1,8 @@
 /* Styles généraux de la page */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #003366;
-    color: #FFFFFF;
+    background-color: #003366; /* Fond bleu marine professionnel */
+    color: #FFFFFF; /* Texte principal en blanc */
     margin: 0;
     padding: 0;
     display: flex;
@@ -28,7 +28,7 @@ body {
 }
 
 .logo-small {
-    width: 60px;
+    width: 60px; /* Taille réduite du logo pour le header */
     height: auto;
 }
 
@@ -54,46 +54,46 @@ body {
 
 /* Contenu principal de la page */
 .main-content {
-    flex-grow: 1;
+    flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-/* Conteneur du contenu */
+/* Conteneur principal */
 .container {
-    background-color: #0E4477;
+    background-color: #0E4477; /* Un bleu légèrement plus clair pour le conteneur */
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 90%;
 }
 
-/* Titres et textes */
+/* Titre principal */
 h1 {
     font-size: 2.5em;
-    color: #FFFFFF;
+    color: #FFFFFF; /* Titre en blanc */
     margin-bottom: 10px;
 }
 
+/* Sous-titre et description */
 p.tagline {
     font-size: 1.2em;
-    color: #E0E0E0;
+    color: #E0E0E0; /* Gris clair pour le sous-titre */
     margin-bottom: 30px;
 }
 
-/* Bouton d'action */
+/* Boutons */
 .cta-button {
-    background-color: #1864AB;
-    color: #FFFFFF;
+    display: inline-block;
+    background-color: #1864AB; /* Un bleu distinct pour le bouton */
+    color: #FFFFFF; /* Texte blanc */
     padding: 15px 30px;
-    border: none;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 1px;
-    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -107,12 +107,97 @@ footer {
     margin-top: auto;
     padding: 20px;
     font-size: 0.9em;
+    color: #CCCCCC; /* Gris clair pour la signature */
+}
+
+/* Styles pour la page de services */
+.services-page {
+    max-width: 900px;
+}
+
+.services-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.service-item {
+    background-color: #0B3A60;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #F5F5F5;
+}
+
+.service-item p {
+    font-size: 1em;
     color: #CCCCCC;
+}
+
+/* Styles pour le tableau de bord */
+.dashboard-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #0B3A60;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    color: #F5F5F5;
+}
+
+.card p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1864AB;
+    margin: 10px 0 0;
+}
+
+/* Styles pour le bouton de retour */
+.back-button {
+    display: inline-block;
+    background-color: #0B3A60;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #104C7D;
+    transform: translateX(-5px);
 }
 
 /* Styles pour le menu mobile (hamburger) */
 .menu-toggle {
-    display: none; /* Hide by default on desktop */
+    display: none; /* Masqué par défaut */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -132,7 +217,7 @@ footer {
 .mobile-menu {
     display: none;
     position: absolute;
-    top: 60px; /* Adjust based on header height */
+    top: 60px; /* Ajuster en fonction de la hauteur de l'en-tête */
     right: 0;
     width: 250px;
     background-color: #0E4477;
@@ -173,23 +258,4 @@ footer {
     .mobile-menu.active {
         display: block; /* Affiche le menu mobile quand il est actif */
     }
-}
-
-
-/* Styles pour le bouton de retour */
-.back-button {
-    display: inline-block;
-    background-color: #0B3A60;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.back-button:hover {
-    background-color: #104C7D;
-    transform: translateX(-5px);
 }
