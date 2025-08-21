@@ -376,3 +376,249 @@ footer {
     border-radius: 5px;
     margin-bottom: 8px;
 }
+/* Styles généraux de la page */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #003366; /* Fond bleu marine professionnel */
+    color: #FFFFFF; /* Texte principal en blanc */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Header (barre de navigation) */
+.main-header {
+    background-color: #0E4477;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-small {
+    width: 60px; /* Taille réduite du logo pour le header */
+    height: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #CCCCCC;
+}
+
+/* Contenu principal de la page */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Conteneur principal */
+.container {
+    background-color: #0E4477;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+/* Titre principal et animation d'écriture */
+.typing-text {
+    overflow: hidden; /* Cache le texte qui n'est pas encore "écrit" */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    margin: 0 auto;
+    letter-spacing: .15em; /* Espace entre les lettres */
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .75s step-end infinite;
+    width: 0; /* Commence avec une largeur de 0 */
+}
+
+/* Animation de l'effet d'écriture */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Animation du curseur clignotant */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+/* Sous-titre et description */
+p.tagline {
+    font-size: 1.2em;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+/* Boutons */
+.cta-button {
+    display: inline-block;
+    background-color: #1864AB;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #104C7D;
+    transform: translateY(-2px);
+}
+
+/* Pied de page */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #CCCCCC;
+}
+
+/* Styles pour le tableau de bord */
+.dashboard-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #0B3A60;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    color: #F5F5F5;
+}
+
+.card p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1864AB;
+    margin: 10px 0 0;
+}
+
+/* Styles pour le bouton de retour */
+.back-button {
+    display: inline-block;
+    background-color: #0B3A60;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #104C7D;
+    transform: translateX(-5px);
+}
+
+/* Styles pour le menu mobile (hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    background-color: #0E4477;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu li a:hover {
+    background-color: #104C7D;
+}
+
+/* Afficher le menu sur les petits écrans */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .main-header {
+        justify-content: space-between;
+    }
+    .mobile-menu.active {
+        display: block;
+    }
+    }
+    
