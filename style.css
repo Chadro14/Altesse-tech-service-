@@ -174,3 +174,22 @@ footer {
         display: block; /* Affiche le menu mobile quand il est actif */
     }
 }
+
+
+/* Styles pour le bouton de retour */
+.back-button {
+    display: inline-block;
+    background-color: #0B3A60;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #104C7D;
+    transform: translateX(-5px);
+}
