@@ -1,0 +1,113 @@
+/* Styles généraux de la page */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #003366;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Header (barre de navigation) */
+.main-header {
+    background-color: #0E4477;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-small {
+    width: 60px;
+    height: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #CCCCCC;
+}
+
+/* Contenu principal de la page */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Conteneur du contenu */
+.container {
+    background-color: #0E4477;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    transform: scale(0.9);
+    transition: transform 0.5s ease-out;
+}
+
+/* Titres et textes */
+h1 {
+    font-size: 2.5em;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+p.tagline {
+    font-size: 1.2em;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+/* Bouton d'action */
+.cta-button {
+    background-color: #1864AB;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #104C7D;
+    transform: translateY(-2px);
+}
+
+/* Pied de page */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #CCCCCC;
+}
