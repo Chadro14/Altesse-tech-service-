@@ -15,7 +15,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="dashboard.html">Compte</a></li>
+                <li class="desktop-only"><a href="dashboard.html">Tableau de bord</a></li>
             </ul>
         </nav>
         <div class="menu-toggle" id="menu-toggle">
@@ -25,11 +25,8 @@
         </div>
         <div class="mobile-menu" id="mobile-menu">
             <ul>
-                <li><a href="#">Nos Services</a></li>
-                <li><a href="#">Royal GPT</a></li>
-                <li><a href="#">Codage Éthique</a></li>
-                <li><a href="#">Cybersécurité</a></li>
-                <li><a href="#">Publications d'admin</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
             </ul>
         </div>
     </header>
@@ -39,19 +36,38 @@
             <a href="index.html" class="back-button">← Retour</a>
             <h1>Tableau de bord</h1>
             <p class="tagline">Bienvenue sur votre espace de gestion.</p>
-            
-            <div class="dashboard-content">
-                <div class="card">
-                    <h2>Projets en cours</h2>
-                    <p>3</p>
+
+            <div class="dashboard-buttons">
+                <a href="#" class="cta-button">Démade</a>
+                <a href="#" class="cta-button">Altesse IA</a>
+                <a href="#" class="cta-button">Cybersécurité</a>
+            </div>
+
+            <div class="dashboard-sections">
+                <div class="section-card">
+                    <h2>Boîte pour écrire à l'admin</h2>
+                    <form class="contact-form">
+                        <textarea placeholder="Votre message..."></textarea>
+                        <button type="submit" class="cta-button">Envoyer</button>
+                    </form>
                 </div>
-                <div class="card">
-                    <h2>Clients</h2>
-                    <p>5</p>
+                
+                <div class="section-card">
+                    <h2>Publications de l'admin</h2>
+                    <div class="publications-list">
+                        <p>Publication #1: Mise à jour du site...</p>
+                        <p>Publication #2: Nouveaux services...</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h2>Messages reçus</h2>
-                    <p>12</p>
+
+                <div class="section-card">
+                    <h2>Évaluation</h2>
+                    <p>Laissez-nous un commentaire.</p>
+                    <form class="evaluation-form">
+                        <input type="text" placeholder="Votre nom">
+                        <textarea placeholder="Votre avis..."></textarea>
+                        <button type="submit" class="cta-button">Soumettre</button>
+                    </form>
                 </div>
             </div>
             
@@ -59,10 +75,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Altess Tech Service. by Son Altesse 🛅.</p>
+        <p>&copy; 2025 Altess Tech Service. Tous droits réservés.</p>
     </footer>
 
-    <script src="dashboard.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
