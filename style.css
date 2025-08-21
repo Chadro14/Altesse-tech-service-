@@ -1,8 +1,8 @@
 /* Styles généraux de la page */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #003366;
-    color: #FFFFFF;
+    background-color: #003366; /* Fond bleu marine professionnel */
+    color: #FFFFFF; /* Texte principal en blanc */
     margin: 0;
     padding: 0;
     display: flex;
@@ -28,7 +28,7 @@ body {
 }
 
 .logo-small {
-    width: 60px;
+    width: 60px; /* Taille réduite du logo pour le header */
     height: auto;
 }
 
@@ -72,24 +72,25 @@ body {
     margin-top: 20px;
 }
 
-/* Titre de la page d'accueil */
+/* Titre de la page d'accueil avec animation */
 .typing-text {
-    overflow: hidden;
-    white-space: nowrap;
+    overflow: hidden; /* Cache le texte qui n'est pas encore "écrit" */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
     margin: 0 auto;
-    letter-spacing: .15em;
+    letter-spacing: .15em; /* Espace entre les lettres */
     animation: 
         typing 3.5s steps(30, end) forwards,
         blink-caret .75s step-end infinite;
-    width: 0;
+    width: 0; /* Commence avec une largeur de 0 */
 }
 
-/* Animations du titre */
+/* Animation d'écriture */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
+/* Animation du curseur clignotant */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: white; }
@@ -130,34 +131,78 @@ footer {
     color: #CCCCCC;
 }
 
+/* Styles pour la page Services */
+.services-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.service-item {
+    background-color: #0B3A60;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
 /* Styles pour le tableau de bord */
-.dashboard-content {
+.dashboard-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-.card {
+.dashboard-buttons .cta-button {
+    padding: 12px 24px;
+    font-size: 1em;
+}
+
+.hidden-section {
+    display: none;
+    margin-top: 30px;
     background-color: #0B3A60;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 200px;
-    text-align: center;
+    text-align: left;
 }
 
-.card h2 {
-    font-size: 1.2em;
+.hidden-section h2 {
+    font-size: 1.5em;
     color: #F5F5F5;
+    margin-top: 0;
 }
 
-.card p {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #1864AB;
-    margin: 10px 0 0;
+.contact-form, .evaluation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form textarea, .evaluation-form textarea, .evaluation-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #104C7D;
+    background-color: #0E4477;
+    color: #FFFFFF;
+}
+
+.publications-list p {
+    background-color: #0E4477;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
 }
 
 /* Styles pour le bouton de retour */
@@ -227,46 +272,7 @@ footer {
     background-color: #104C7D;
 }
 
-/* Style des sections cachées */
-.hidden-section {
-    display: none;
-    margin-top: 30px;
-    background-color: #0B3A60;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
-}
-
-.hidden-section h2 {
-    font-size: 1.5em;
-    color: #F5F5F5;
-    margin-top: 0;
-}
-
-.contact-form, .evaluation-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-form textarea, .evaluation-form textarea, .evaluation-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #104C7D;
-    background-color: #0E4477;
-    color: #FFFFFF;
-}
-
-.publications-list p {
-    background-color: #0E4477;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 8px;
-}
-
-/* Afficher le menu sur les petits écrans */
+/* Styles pour les petits écrans */
 @media (max-width: 768px) {
     .main-nav {
         display: none;
@@ -280,4 +286,4 @@ footer {
     .mobile-menu.active {
         display: block;
     }
-        }
+    }
