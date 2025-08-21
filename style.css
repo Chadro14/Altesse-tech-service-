@@ -287,3 +287,60 @@ footer {
         display: block;
     }
     }
+
+/* Styles pour la page du chatbot */
+.chat-container {
+    max-width: 700px;
+    padding: 30px;
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #104C7D;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #0E4477;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+.message.user {
+    background-color: #1864AB;
+    color: #FFFFFF;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.message.bot {
+    background-color: #0B3A60;
+    color: #FFFFFF;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #104C7D;
+    background-color: #0B3A60;
+    color: #FFFFFF;
+}
+
+.chat-form .cta-button {
+    padding: 10px 20px;
+}
