@@ -324,3 +324,55 @@ footer {
         display: block; /* Affiche le menu mobile quand il est actif */
     }
 }
+/* Styles des nouveaux boutons du tableau de bord */
+.dashboard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.dashboard-buttons .cta-button {
+    padding: 12px 24px;
+    font-size: 1em;
+}
+
+/* Style des sections cachées */
+.hidden-section {
+    display: none;
+    margin-top: 30px;
+    background-color: #0B3A60;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.hidden-section h2 {
+    font-size: 1.5em;
+    color: #F5F5F5;
+    margin-top: 0;
+}
+
+.contact-form, .evaluation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form textarea, .evaluation-form textarea, .evaluation-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #104C7D;
+    background-color: #0E4477;
+    color: #FFFFFF;
+}
+
+.publications-list p {
+    background-color: #0E4477;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
