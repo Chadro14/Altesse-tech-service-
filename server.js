@@ -1,40 +1,39 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const fetch = require('node-fetch');
+<script>
+  const messages = document.getElementById("messages");
+  const input = document.getElementById("input");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+  function addMessage(text, type) {
+    const msg = document.createElement("div");
+    msg.classList.add(type);
+    msg.textContent = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
 
-// Assurez-vous que tous vos fichiers (HTML, CSS, JS) sont dans un dossier nommé 'public'
-// Ou si ce n'est pas le cas, changez la ligne ci-dessous
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.post('/api/chat', async (req, res) => {
-    const userMessage = req.body.message;
-
-    if (!userMessage) {
-        return res.status(400).json({ reply: "Message manquant." });
-    }
+    addMessage(text, "user");
+    input.value = "";
 
     try {
-        const apiUrl = `https://kyotaka-api.vercel.app/api/chat?query=${encodeURIComponent(userMessage)}`;
+      const res = await fetch("https://kyotaka-api.vercel.app/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: text }),
+      });
 
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        const botReply = data.message;
-
-        res.json({ reply: botReply });
-
-    } catch (error) {
-        console.error("Erreur de l'API Kyotaka:", error);
-        res.status(500).json({ reply: "Désolé, il y a eu un problème technique. Veuillez réessayer plus tard." });
+      const data = await res.json();
+      addMessage(data.reply || data.message, "bot");
+    } catch (e) {
+      addMessage("Erreur API", "bot");
     }
-});
+  }
 
-app.listen(PORT, () => {
-    console.log(`Le serveur est en cours d'exécution sur http://localhost:${PORT}`);
-});
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+</script>
