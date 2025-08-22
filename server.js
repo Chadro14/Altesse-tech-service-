@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Créez une instance d'OpenAI avec votre clé API
 // ATTENTION : Ne partagez jamais votre clé API sur GitHub ou ailleurs !
 const openai = new OpenAI({
-    apiKey: "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", 
+    apiKey: "https://kyotaka-api.vercel.app/", 
 });
 
 // Middleware pour analyser le corps des requêtes en JSON
