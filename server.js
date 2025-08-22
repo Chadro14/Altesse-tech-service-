@@ -1,19 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const fetch = require('node-fetch'); // Pour faire des requêtes HTTP
+const fetch = require('node-fetch');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware pour analyser le corps des requêtes en JSON
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Servir les fichiers statiques (HTML, CSS, JS)
+// Assurez-vous que tous vos fichiers (HTML, CSS, JS) sont dans un dossier nommé 'public'
+// Ou si ce n'est pas le cas, changez la ligne ci-dessous
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Point de terminaison pour la communication avec l'IA
 app.post('/api/chat', async (req, res) => {
     const userMessage = req.body.message;
 
@@ -22,14 +21,12 @@ app.post('/api/chat', async (req, res) => {
     }
 
     try {
-        // Envoi de la requête à l'API Kyotaka
         const apiUrl = `https://kyotaka-api.vercel.app/api/chat?query=${encodeURIComponent(userMessage)}`;
 
         const response = await fetch(apiUrl);
         const data = await response.json();
         const botReply = data.message;
 
-        // Renvoyer la réponse de l'IA au client
         res.json({ reply: botReply });
 
     } catch (error) {
