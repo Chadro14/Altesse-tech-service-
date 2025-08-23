@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('user-input');
     const chatBox = document.getElementById('chat-box');
 
-    // Message d'accueil initial de l'IA
-    appendMessage("Je suis Altesse IA, votre assistant. J'ai été créé par Son Altesse, un développeur congolais 🇨🇩.", 'bot');
-
     chatForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const userMessage = userInput.value.trim();
@@ -17,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         appendMessage(userMessage, 'user');
         userInput.value = '';
 
-        // Appeler la route API du serveur pour obtenir une réponse
         try {
+            // Requête vers votre serveur local
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
@@ -27,11 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({ message: userMessage }),
             });
 
+            if (!response.ok) {
+                throw new Error(`Erreur de connexion : ${response.status}`);
+            }
+
             const data = await response.json();
             appendMessage(data.reply, 'bot');
 
         } catch (error) {
-            console.error("Erreur de communication avec l'IA:", error);
+            console.error("Erreur de communication avec le serveur:", error);
             appendMessage("Désolé, il y a eu un problème technique. Veuillez réessayer plus tard.", 'bot');
         }
     });
